@@ -4,6 +4,7 @@ import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 // import Navbar from "./components/Navbar.jsx";
 import "./server.js"
+import Vans from "./components/Vans.jsx"
 
 /**
  * Challenge:
@@ -28,11 +29,13 @@ export default function App() {
       <Link className="site-logo" to="/" >#VANLIFE</Link>
       <nav>
         <Link to="/about" >About</Link>
+        <Link to="/vans" >Vans</Link>
       </nav>
     </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
+        <Route path="vans" element={<Vans />} />
       </Routes>
     </BrowserRouter>
   );
