@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 // import Navbar from "./components/Navbar.jsx";
+import "./server.js"
+
 /**
  * Challenge:
  * Bootstrap the VanLife project by creating the first 2 routes:
