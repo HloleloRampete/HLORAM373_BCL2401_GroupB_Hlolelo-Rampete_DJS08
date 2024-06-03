@@ -19,11 +19,19 @@ import Navbar from "./components/Navbar.jsx"
  * linked in the slides.
  */
 
-function App() {
+export default function App() {
 
   return (
-    <h1>Start here</h1>
+    <Router>
+      <div>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/about" component={About} />
+        </Switch>
+      </div>
+    </Router>
   )
 }
 
-export default App
+
