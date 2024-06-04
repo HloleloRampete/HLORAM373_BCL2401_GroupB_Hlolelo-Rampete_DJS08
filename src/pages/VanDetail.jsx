@@ -9,12 +9,12 @@ export default function VanDetail() {
         // fetch data from API using params.id
         fetch(`/api/vans/${params.id}`)
         .then(response => response.json())
-        .then(data => setVan(data.vans))
+        .then(data => setVan(data.vans)) // localized state
     }, [params.id]) // Rerunning the useEffect for each time data is fetched
 
     return (
         <div className="van-detail-container">
-            {van ? (
+            {van ? ( 
                 <div className="van-detail">
                     <img src={van.imageUrl} alt="Van image" />
                     <h2>{van.name}</h2>

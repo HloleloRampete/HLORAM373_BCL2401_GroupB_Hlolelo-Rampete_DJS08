@@ -1,11 +1,11 @@
 // import React from "react"
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import Home from "./components/Home.jsx";
-import About from "./components/About.jsx";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
 // import Navbar from "./components/Navbar.jsx";
 import "./server.js";
-import Vans from "./components/Vans.jsx";
-import VanDetail from "./components/VanDetail.jsx"
+import Vans from "./pages/Vans.jsx";
+import VanDetail from "./pages/VanDetail.jsx"
 
 /**
  * Challenge:
