@@ -11,7 +11,7 @@ export default function Vans() {
   // We only want it to run once, when our component mounts.
 
   const vanElements = vans.map((van) => (
-    <div key={van.id} className="van-title">
+    <div key={van.id} className="van-tile">
       <img src={van.imageUrl} alt="Van image" />
       <div className="van-info">
         <h3>{van.name}</h3>
