@@ -3,8 +3,8 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./components/Home.jsx";
 import About from "./components/About.jsx";
 // import Navbar from "./components/Navbar.jsx";
-import "./server.js"
-import Vans from "./components/Vans.jsx"
+import "./server.js";
+import Vans from "./components/Vans.jsx";
 
 /**
  * Challenge:
@@ -25,13 +25,15 @@ import Vans from "./components/Vans.jsx"
 export default function App() {
   return (
     <BrowserRouter>
-    <header>
-      <Link className="site-logo" to="/" >#VANLIFE</Link>
-      <nav>
-        <Link to="/about" >About</Link>
-        <Link to="/vans" >Vans</Link>
-      </nav>
-    </header>
+      <header>
+        <Link className="site-logo" to="/">
+          #VANLIFE
+        </Link>
+        <nav>
+          <Link to="/about">About</Link>
+          <Link to="/vans">Vans</Link>
+        </nav>
+      </header>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
