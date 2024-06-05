@@ -10,7 +10,7 @@ export default function Header() {
       <nav>
         <NavLink
           to="/host"
-          className={({ isActive }) => isActive ? "active-link" : null}
+          className={({ isActive }) => isActive ? "active-link" : null} // render prop
         >
           Host
         </NavLink>
