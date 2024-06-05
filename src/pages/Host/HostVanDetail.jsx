@@ -9,7 +9,11 @@ export default function HostVanDetail() {
     fetch(`/api/host/vans/${id}`)
       .then((response) => response.json())
       .then((data) => setCurrentVan(data.vans));
-  }, []);
+  }, [id]);
+
+  if (!currentVan) {
+    return <h1>Loading...</h1>;
+  }
 
   return (
     <section>
