@@ -44,3 +44,4 @@ export default function HostVans() {
     </section>
   );
 }
+// mapping through our list of vans, we create a link to the host/vans and their van id
