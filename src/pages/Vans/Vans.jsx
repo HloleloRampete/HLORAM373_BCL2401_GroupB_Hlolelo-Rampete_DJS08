@@ -1,8 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
+  const [searchParams, setSearchParams] = useSearchParams()
+
+  const typeFilter = searchParams.get("type")
 
   React.useEffect(() => {
     fetch("/api/vans")
@@ -11,7 +14,11 @@ export default function Vans() {
   }, []); // Avoiding our effect from running everytime our page updates.
   // We only want it to run once, when our component mounts.
 
-  const vanElements = vans.map((van) => (
+  const displayedVans = typeFilter
+  ? vans.filter(van => van.type === typeFilter)
+  : vans
+
+  const vanElements = displayedVans.map((van) => (
     <div key={van.id} className="van-tile">
       <Link to={`/vans/${van.id}`} >
         <img src={van.imageUrl} alt="Van image" />
