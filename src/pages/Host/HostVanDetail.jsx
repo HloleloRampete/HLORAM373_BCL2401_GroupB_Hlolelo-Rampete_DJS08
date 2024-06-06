@@ -31,6 +31,11 @@ export default function HostVanDetail() {
             <h4>${currentVan.price}/day</h4>
           </div>
         </div>
+
+        <nav className="host-van-detail-van">
+            
+        </nav>
+
         <Outlet />
       </div>
     </section>
