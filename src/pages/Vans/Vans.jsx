@@ -45,13 +45,13 @@ export default function Vans() {
           Simple
         </Link>
         <Link
-          to="?type=Luxury"
+          to="?type=luxury"
           className="van-type luxury"
         >
           Luxury
         </Link>
         <Link
-          to="?type=Rugged"
+          to="?type=rugged"
           className="van-type rugged"
         >
           Rugged
