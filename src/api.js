@@ -4,7 +4,7 @@ export async function getVans() {
         throw {
             message: "Failed tp fetch vans",
             statusText: response.statusText,
-            status:response.status
+            status: response.status,
         }
     }
     const data = await response.json()
