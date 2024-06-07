@@ -5,13 +5,16 @@ import { getVans } from "../../api.js"
 export default function Vans() {
   const [vans, setVans] = React.useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [loading, setLoading] = React.useState(false)
 
   const typeFilter = searchParams.get("type");
 
   React.useEffect(() => {
     async function loadVans() {
+      setLoading(true)
       const data = await getVans()
       setVans(data)
+      setLoading(false)
     }
     loadVans()
   }, []); // Avoiding our effect from running everytime our page updates.
@@ -36,6 +39,10 @@ export default function Vans() {
       </Link>
     </div>
   ));
+
+  if (loading) {
+    return (<h1>Loading...</h1>)
+  } 
 
   return (
     <div className="van-list-container">
