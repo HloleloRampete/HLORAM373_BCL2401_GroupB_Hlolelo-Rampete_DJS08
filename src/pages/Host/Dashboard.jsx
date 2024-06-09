@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { BsStarFill } from "./assets/images/react-icons/bs";
+import { BsStarFill } from "react-icons/bs";
 import { getHostVans } from "../../api";
 
 
