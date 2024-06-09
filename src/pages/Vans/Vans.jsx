@@ -3,20 +3,27 @@ import { Link, useSearchParams } from "react-router-dom";
 import { getVans } from "../../api.js"
 
 export default function Vans() {
-  const [vans, setVans] = React.useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
-  const [loading, setLoading] = React.useState(false)
+  const [vans, setVans] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+  const [error, setError] = React.useState(null);
 
   const typeFilter = searchParams.get("type");
 
   React.useEffect(() => {
     async function loadVans() {
-      setLoading(true)
-      const data = await getVans()
-      setVans(data)
-      setLoading(false)
+      setLoading(true);
+      try {
+        const data = await getVans();
+        setVans(data);
+      } catch (err) {
+        setError(err);
+      } finally {
+        setLoading(false);
+      }
     }
-    loadVans()
+
+    loadVans();
   }, []); // Avoiding our effect from running everytime our page updates.
   // We only want it to run once, when our component mounts.
 
