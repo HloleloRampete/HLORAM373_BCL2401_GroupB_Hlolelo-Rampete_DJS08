@@ -76,11 +76,11 @@ createServer({
 
   routes() {
     this.namespace = "api";
-    this.logging = false
+    this.logging = false;
 
     this.get("/vans", (schema) => {
       // return schema.vans.all();
-      return new Response(400, {}, {error: "Error fetching data"})
+      return new Response(400, {}, { error: "Error fetching data" });
     });
 
     this.get("/vans/:id", (schema, request) => {
@@ -95,6 +95,24 @@ createServer({
       // Hard-code the hostId for now
       const id = request.params.id;
       return schema.vans.findBy({ id, hostId: "123" });
+    });
+    this.post("/login", (schema, request) => {
+      const { email, password } = JSON.parse(request.requestBody);
+
+      const foundUser = schema.users.findBy({ email, password });
+      if (!foundUser) {
+        return new Response(
+          401,
+          {},
+          { message: "No user with those credentials found!" }
+        );
+      }
+
+      foundUser.password = undefined;
+      return {
+        user: foundUser,
+        token: "Enjoy your pizza, here's your tokens.",
+      };
     });
   },
 });
