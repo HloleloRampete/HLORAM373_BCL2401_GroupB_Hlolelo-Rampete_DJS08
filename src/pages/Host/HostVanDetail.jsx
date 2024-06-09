@@ -2,6 +2,7 @@ import React from "react";
 import { useParams, Link, NavLink, Outlet } from "react-router-dom";
 import { getVan } from "../../api";
 
+// The HostVanDetail component is responsible for displaying the details of a specific van.
 export default function HostVanDetail() {
   const { id } = useParams();
   const [currentVan, setCurrentVan] = React.useState(null);
