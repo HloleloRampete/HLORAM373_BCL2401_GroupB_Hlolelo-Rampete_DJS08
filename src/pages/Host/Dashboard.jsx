@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { BsStarFill } from "react-icons/bs";
 import { getHostVans } from "../../api";
 
-
 export default function Dashboard() {
   const [vans, setVans] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
@@ -37,8 +36,9 @@ export default function Dashboard() {
   if (error) {
     return <h1>Error: {error.message}</h1>;
   }
-  return (<>
-  <section className="host-dashboard-earnings">
+  return (
+    <>
+      <section className="host-dashboard-earnings">
         <div className="info">
           <h1>Welcome!</h1>
           <p>
@@ -69,5 +69,6 @@ export default function Dashboard() {
           <>{renderVanElements(vans)}</>
         )}
       </section>
-  </>);
+    </>
+  );
 }
