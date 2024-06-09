@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
+    "firebase": "^10.12.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3"
@@ -24,5 +26,9 @@
     "eslint-plugin-react-refresh": "^0.4.6",
     "miragejs": "^0.1.48",
     "vite": "^5.2.0"
-  }
+  },
+  "description": "🎥 INSERT LOOM PRESENTATION LINK: [Here]",
+  "main": "vite.config.js",
+  "author": "",
+  "license": "ISC"
 }
